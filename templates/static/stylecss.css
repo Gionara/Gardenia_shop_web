@@ -1,0 +1,219 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+:root {
+    --color-primary: #FFA500;
+    --color-secondary: #FFD700;
+    --color-tertiary: #32CD32;
+    --color-dark: #333333;
+    --color-light: #FFFFFF;
+    --color-black: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, input, textarea, ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-light)
+}
+
+/*base style*/
+html,
+body {
+    height: 100%;
+}
+
+.footer {
+    flex-shrink: 0;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.navbar {
+    border-bottom: 1px solid #000000;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
+}
+
+.nav-link {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(251, 251, 251);
+    padding: 10px 15px;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #FFD700;
+}
+
+.dropdown-menu {
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    transition: all 0.3s;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    background-color: #202020;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+}
+
+.dropdown-item {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 10px 20px;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: #FFA500;
+    color: #000000;
+}
+
+.form-control {
+    border-radius: 25px;
+}
+
+.btn-outline-success {
+    border-color: #FFA500;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+.btn-outline-success:hover {
+    background-color: #FFA500;
+    color: #fff;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+.carousel {
+    position: relative;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    align-items: center;
+    align-content: center;
+    transform: translateY(100%) translateX(-50%);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.carousel-indicators button {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border-color: FFD700;
+    margin-top: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+span a {
+    color: var(--color-primary);
+    font-weight: bold;
+}
+span a:hover,
+span a:focus {
+    color: var(--color-black) ;
+    background-color: var(--color-secondary) ;
+    font-weight: bold;
+}
+a {
+    text-decoration: none;
+    display: block;
+    padding: 3px;
+    color: #ffffff;
+}
+ a:hover,
+ a:focus{
+    color: #32CD32;
+ }
+
+ li:hover,
+ li:focus{
+    h5{
+        color: #FFA500;}
+ }
+
+
+.titulo_blanco {
+    color: #ffffff;
+    display: block;
+}
+
+i {
+    font-size: 25px;
+    padding: 5px;
+}
+
+.centrar {
+    align-items: center;
+    align-content: center;
+}
+
+.tamano_img_cartas {
+    width: 70%;
+}
+
+p {
+    text-align: justify;
+}
+
+.tamano_img_product_carro {
+    width: 70%;
+    padding: 6px;
+}
+
+.custom-button {
+    display: inline-block;
+    padding: 0.2rem 0.2rem;
+}
+
+.dropdown-large{ padding:1rem; }
+    
+            /* ============ desktop view ============ */
+            @media all and (min-width: 100px) {
+                .dropdown-large{min-width:500px;}
+            }	
+            /* ============ desktop view .end// ============ */
