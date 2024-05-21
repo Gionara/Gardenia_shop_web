@@ -13,7 +13,45 @@
         <link rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <link rel="stylesheet" href="../static/stylecss.css">
-
+        <style>
+            main {
+                position: relative;
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+                overflow: hidden; /* Esto asegura que no haya scrolls inesperados */
+            }
+            
+            main::before {
+                content: "";
+                position: fixed; /* Fija la imagen al fondo */
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('../static/img/logo/logo_line.png'); /* Reemplaza 'ruta-de-tu-imagen.jpg' con la ruta de tu imagen */
+                background-size:contain; /* Ajusta la imagen para que cubra todo el fondo */
+                background-repeat: no-repeat; /* Evita que la imagen se repita */
+                background-position: center; /* Centra la imagen de fondo */
+                opacity: 0.2; /* Ajusta la transparencia de la imagen */
+                z-index: -1; /* Coloca la imagen detrás del contenido */
+            }
+    
+            .b-example-divider {
+                padding: 1rem 0;
+            }
+            
+            .container {
+                max-width: 960px;
+                margin: 0 auto;
+                position: relative;
+                z-index: 1; /* Asegura que el contenido esté por encima de la imagen de fondo */
+            }
+            
+            .text-center {
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
         <!-- NAVBAR-->
@@ -22,7 +60,8 @@
             <div class="container justify-content-between">
                 <img src="../static/img/logo/logo_color.png" alt width="30">
                 <a class="navbar-brand d-md-none" href="../index.html">
-                    <a class="navbar-brand" href="../index.html">Gardenia Shop</a>
+                    <a class="navbar-brand" href="../index.html">Gardenia
+                        Shop</a>
                 </a>
                 <button class="navbar-toggler" type="button"
                     data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
@@ -158,8 +197,39 @@
 
         <!--MAIN-->
         <main>
+<!-- CONTENIDO-->
+<div class="b-example-divider"><p></p></div>
 
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 d-none d-md-block">
+            <img src="../static/img/banner/banner_vertical_niños.jpg" class="img-fluid" alt="">
+        </div>
+        <div class="col-md-7">
+            <div class="jumbotron">
+                <h1 class="text-center">GARDENIA SHOP</h1>
+                    <h2 class="text-center">Donde la jardinería florece con propósito</h2> 
+                    <br>
+                <h3>¿Quiénes somos?</h3>
+                <p>En Gardenia Shop, somos más que una simple tienda de jardinería. Somos una comunidad apasionada por las plantas y comprometida con el bienestar de nuestro entorno y de los niños más necesitados a través de la fundación Niños por Chile.</p>
 
+                <h3>Nuestro objetivo:</h3>
+                <p>Nuestro objetivo principal es brindarles a los vecinos de la comunidad un espacio donde puedan adquirir todo lo necesario para cultivar sus propios jardines, desde semillas y herramientas hasta macetas y fertilizantes. Creemos que la jardinería es una actividad terapéutica y gratificante que nos conecta con la naturaleza y nos permite crear espacios hermosos en nuestros hogares. Además, buscamos fomentar una cultura de sostenibilidad y respeto por el medio ambiente.</p>
+
+                <h3>Más que una tienda:</h3>
+                <p>Pero Gardenia Shop es más que una tienda. También es una plataforma donde los vecinos pueden registrarse como vendedores y ofrecer sus propios productos de jardinería, como plantas, flores, artesanías y productos gourmet elaborados con ingredientes frescos de sus jardines. Promovemos el comercio local y ayudamos a los emprendedores a crecer y alcanzar una audiencia más amplia.</p>
+
+                <h3>Apoyando a los niños:</h3>
+                <p>Lo más importante de Gardenia Shop es nuestro compromiso con la fundación sin fines de lucro Niños por Chile. Cada venta realizada en nuestra tienda contribuye a financiar programas de apoyo a niños en situación de vulnerabilidad. Estos programas incluyen educación, nutrición, salud y actividades recreativas que ayudan a mejorar la calidad de vida de estos niños y sus familias.</p>
+
+                <h3>Juntos podemos hacer la diferencia:</h3>
+                <p>Al comprar en Gardenia Shop, no solo estás adquiriendo productos de jardinería de alta calidad, sino que también estás apoyando una causa noble. Te invitamos a unirte a nuestra comunidad y ser parte del cambio. Cada planta que cultivas, cada flor que haces florecer, contribuye a un futuro mejor para los niños de Chile.</p>
+
+                <p class="text-center"><b>En Gardenia Shop, la jardinería florece con propósito.</b></p>
+            </div>
+        </div>
+    </div>
+</div>
         </main>
         <div class="b-example-divider m-3"><p></p></div>
 
@@ -172,8 +242,8 @@
                         <img src="../static/img/logo/logo_color.png" alt
                             width="80px"
                             style="padding-right: 4px;">
-                        <a class="navbar-brand d-md-none" href="index.html">
-                            <a class="navbar-brand" href="index.html">Gardenia
+                        <a class="navbar-brand d-md-none" href="../index.html">
+                            <a class="navbar-brand" href="../index.html">Gardenia
                                 Shop</a>
                         </a></row>
                 </div>

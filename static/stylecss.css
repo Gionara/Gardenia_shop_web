@@ -48,6 +48,7 @@ body {
 
 .footer {
     flex-shrink: 0;
+   
 }
 
 .content {
@@ -56,6 +57,7 @@ body {
 
 .navbar {
     border-bottom: 1px solid #000000;
+   
 }
 
 .navbar-brand {
@@ -79,6 +81,8 @@ body {
 .nav-link:focus {
     color: #FFD700;
 }
+
+
 
 .dropdown-menu {
     border: none;
