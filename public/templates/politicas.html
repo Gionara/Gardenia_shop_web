@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gardenia - Politicas</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous">
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="../public/static/stylecss.css">
+        <style>
+            main {
+                position: relative;
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+                overflow: hidden; /* Esto asegura que no haya scrolls inesperados */
+            }
+            
+            main::before {
+                content: "";
+                position: fixed; /* Fija la imagen al fondo */
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('../public/static/img/logo/logo_line.png'); /* Reemplaza 'ruta-de-tu-imagen.jpg' con la ruta de tu imagen */
+                background-size:contain; /* Ajusta la imagen para que cubra todo el fondo */
+                background-repeat: no-repeat; /* Evita que la imagen se repita */
+                background-position: center; /* Centra la imagen de fondo */
+                opacity: 0.2; /* Ajusta la transparencia de la imagen */
+                z-index: -1; /* Coloca la imagen detrás del contenido */
+            }
+    
+            .b-example-divider {
+                padding: 1rem 0;
+            }
+            
+            .container {
+                max-width: 960px;
+                margin: 0 auto;
+                position: relative;
+                z-index: 1; /* Asegura que el contenido esté por encima de la imagen de fondo */
+            }
+            
+            .text-center {
+                text-align: center;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <!-- NAVBAR-->
+        <nav class="navbar navbar-expand-md bg-dark sticky-top border-bottom"
+            data-bs-theme="dark">
+            <div class="container justify-content-between">
+                <img src="../public/static/img/logo/logo_color.png" alt width="30">
+                <a class="navbar-brand d-md-none" href="../index.html">
+                    <a class="navbar-brand" href="../index.html">Gardenia
+                        Shop</a>
+                </a>
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
+                    aria-controls="offcanvas" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+                <div class="offcanvas offcanvas-end"
+                    id="offcanvas" aria-labelledby="offcanvasLabel">
+
+                    <div class="offcanvas-header justify-content-between">
+                        <img src="../public/static/img/logo/logo_outline_w.png"
+                            width="30px" alt
+                            style="margin-right: 15px;">
+                        <h5 class="offcanvas-title" id="offcanvasLabel">Gardenia
+                            Shop</h5>
+                        <button type="button" class="btn-close"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+
+                        <ul
+                            class="navbar-nav flex-grow-1 justify-content-between">
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#"
+                                    id="navbarDropdownMenuLink1" role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Productos
+                                </a>
+
+                                <ul class="dropdown-menu  dropdown-large"
+                                    aria-labelledby="navbarDropdownMenuLink1">
+                                    <div class="row g-3 mb-3">
+                                        <div
+                                            class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                                            <span
+                                                class="dropdown-header">
+                                                <a
+                                                    href="productos/herramientas/cat_herramientas.html">Herrameintas</a></span>
+                                            <a class="dropdown-item"
+                                                href="productos/herramientas/tijeras.html">Tijeras</a>
+                                            <a class="dropdown-item "
+                                                href="productos/herramientas/palas.html">Palas</a>
+                                            <a class="dropdown-item "
+                                                href="productos/herramientas/otras_herramientas.html">Otras
+                                                Herrameintas</a>
+
+                                        </div>
+
+                                        <div
+                                            class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                                            <span
+                                                class="dropdown-header">
+                                                <a
+                                                    href="productos/semillas/cat_plantas_semillas.html">Plantas
+                                                    y Semillas</a></span>
+                                            <a class="dropdown-item "
+                                                href="productos/semillas/flores.html">Flores</a>
+                                            <a class="dropdown-item "
+                                                href="productos/semillas/plantas_arboles.html">Plantas
+                                                y Arboles</a>
+                                            <a class="dropdown-item "
+                                                href="productos/semillas/huerto.html">Huerto</a>
+
+                                        </div>
+                                        <div
+                                            class="col-lg-4  col-md-6 col-sm-12 mb-3">
+                                            <span
+                                                class="dropdown-header">
+                                                <a
+                                                    href="productos/insumos/cat_insumos.html">Insumos</a></span>
+                                            <a class="dropdown-item "
+                                                href="productos/insumos/tierra.html">
+                                                Tierra</a>
+                                            <a class="dropdown-item "
+                                                href="productos/insumos/fertilizante.html">
+                                                Fertilizante</a>
+                                            <a class="dropdown-item "
+                                                href="productos/insumos/otros_insumos.html">
+                                                Otros Insumos</a>
+
+                                        </div>
+                                        <li><hr class="dropdown-divider "></li>
+                                        <li><a class="dropdown-item col-md-6"
+                                                href="productos/all_products.html">
+                                                Todos los Productos</a></li>
+                                    </div>
+
+                                </ul>
+                            </li>
+
+                            <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="Buscar"
+                                    placeholder="Buscar" aria-label="Buscar">
+                                <button class="btn btn-outline-success"
+                                    type="submit"><i
+                                        class="bi bi-search"></i></button>
+                            </form>
+                            <li class="nav-item"><a class="nav-link"
+                                    href="carro_compras.html">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        width="30" height="30"
+                                        fill="currentColor" class="bi bi-cart4"
+                                        viewBox="0 0 16 16">
+                                        <path
+                                            d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0" />
+                                    </svg>
+                                </a></li>
+                            <li class="nav-item">
+                                <button class="nav-link" data-bs-toggle="modal"
+                                    data-bs-target="#modalSignin">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        width="30" height="30"
+                                        fill="currentColor"
+                                        class="bi bi-person-circle"
+                                        viewBox="0 0 16 16">
+                                        <path
+                                            d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                        <path fill-rule="evenodd"
+                                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                                    </svg>
+                                    Iniciar Sesión
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!--MAIN-->
+        <main>
+
+            <!-- CONTENIDO-->
+            <div class="b-example-divider"><p></p></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
+                        <h2 class="text-center">Política de Privacidad</h2>
+                        <br>
+                        <p>En Gardenia Shop, nos tomamos muy en serio la
+                            privacidad y seguridad de tus datos personales. Esta
+                            Política de Privacidad describe cómo recopilamos,
+                            usamos y protegemos la información que nos
+                            proporcionas cuando utilizas nuestra plataforma.</p>
+                            <br>
+                        <h4>Recopilación de Información</h4>
+                        <p>Cuando te registras en Gardenia Shop como usuario,
+                            recopilamos cierta información personal, como tu
+                            nombre, dirección de correo electrónico, dirección
+                            de domicilio y detalles de pago. Esta información se
+                            utiliza para procesar tus pedidos, brindarte soporte
+                            al cliente y mejorar nuestros servicios.</p>
+                            <br>
+                        <h4>Uso de la Información</h4>
+                        <p>La información personal que recopilamos se utiliza
+                            exclusivamente para los siguientes fines:</p>
+                        <ul>
+                            <li>Procesar y entregar tus pedidos.</li>
+                            <li>Brindarte soporte al cliente y responder a tus
+                                consultas.</li>
+                            <li>Mejorar la experiencia del usuario en nuestra
+                                plataforma.</li>
+                            <li>Enviar comunicaciones promocionales y
+                                actualizaciones sobre nuestros productos y
+                                servicios, siempre y cuando hayas dado tu
+                                consentimiento para recibirlas.</li>
+                        </ul>
+                        <br>
+                        <h4>Protección de Datos</h4>
+                        <p>Utilizamos medidas de seguridad físicas, electrónicas
+                            y administrativas para proteger tus datos personales
+                            contra el acceso no autorizado, la divulgación, la
+                            alteración o destrucción. Además, empleamos
+                            tecnologías de encriptación para proteger la
+                            transmisión de datos confidenciales, como la
+                            información de pago.</p>
+                            <hr>
+                        <h4>Compartir Información</h4>
+                        <p>No vendemos, alquilamos ni compartimos tu información
+                            personal con terceros, excepto en los siguientes
+                            casos:</p>
+                        <ul>
+                            <li>Con proveedores de servicios de confianza que
+                                nos ayudan a operar nuestra plataforma y brindar
+                                nuestros servicios, como procesadores de pagos y
+                                empresas de envío.</li>
+                            <li>Cuando sea necesario para cumplir con la ley,
+                                responder a procesos legales o proteger nuestros
+                                derechos, propiedad o seguridad.</li>
+                        </ul>
+                        <br>
+                        <h4>Cookies y Tecnologías Similares</h4>
+                        <p>Utilizamos cookies y tecnologías similares para
+                            mejorar la funcionalidad de nuestra plataforma y
+                            proporcionarte una experiencia personalizada. Puedes
+                            gestionar tus preferencias de cookies en cualquier
+                            momento a través de la configuración de tu
+                            navegador.</p>
+                            <br>
+                        <h4>Cambios en la Política de Privacidad</h4>
+                        <p>Nos reservamos el derecho de actualizar esta Política
+                            de Privacidad en cualquier momento. Te notificaremos
+                            sobre cualquier cambio importante mediante una
+                            notificación en nuestra plataforma o a través del
+                            correo electrónico que proporcionaste al
+                            registrarte.</p>
+                        <p>Al utilizar nuestra plataforma, aceptas los términos
+                            de esta Política de Privacidad. Si tienes alguna
+                            pregunta o inquietud sobre nuestras prácticas de
+                            privacidad, no dudes en contactarnos.</p>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        <div class="b-example-divider m-3"><p></p></div>
+
+        <!-- FOOTER-->
+
+        <footer class="container-fluid bg-dark">
+            <div class="row" style="padding: 3%;color: #f8f9fa;">
+                <div class="col-12 col-md">
+                    <row>
+                        <img src="../public/static/img/logo/logo_color.png" alt
+                            width="80px"
+                            style="padding-right: 4px;">
+                        <a class="navbar-brand d-md-none" href="../index.html">
+                            <a class="navbar-brand" href="../index.html">Gardenia
+                                Shop</a>
+                        </a></row>
+                </div>
+                <div class="col-6 col-md colored">
+                    <ul class="list-unstyled text-small">
+                        <li><a href="sobre_nosotros.html"><h5
+                                    class="titulo_blanco">Sobre
+                                    nosotros</h5></a></li>
+                    </ul>
+                    <ul class="list-unstyled text-small">
+                        <li><a href="politicas.html"><h5
+                                    class="titulo_blanco">Politicas de
+                                    Privacidad</h5></a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md ">
+                    <div
+                        class="d-flex justify-content-center"><h5>Síguenos</h5></div>
+                    <div class="d-flex justify-content-center">
+                        <div> <a href="url facebook"><i
+                                    class="bi bi-facebook"></i></a> </div>
+                        <div> <a href="url twitter"><i
+                                    class="bi bi-twitter"></i></a> </div>
+                        <div> <a href="url instagram"><i
+                                    class="bi bi-instagram"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+
+    <!-- MODALS-->
+    <div class="modal fade" id="modalSignin" tabindex="-1"
+        aria-labelledby="modalSigninLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-dark">
+                    <img src="../public/static/img/logo/logo_outline_w.png" alt
+                        width="50px"
+                        style="padding-right: 4px;">
+                    <h5 class="modal-title" Style="color: var(--color-light)"
+                        id="modalSigninLabel">Inicio de Sesión</h5>
+                    <button type="button" class="btn-close "
+                        Style="color: var(--color-dark)"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-5 pt-0">
+                    <form class>
+                        <div class="form-floating mb-3 "
+                            style="padding-top: 2%;">
+                            <input type="email" class="form-control rounded-3"
+                                id="floatingInput"
+                                placeholder="name@example.com">
+                            <label for="floatingInput">Correo
+                                Electronico</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password"
+                                class="form-control rounded-3"
+                                id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Contraseña</label>
+                        </div>
+                        <button type="submit"
+                            class="w-100 mb-2 btn btn-lg rounded-3 btn-warning"
+                            style="color:var(--color-dark);">Iniciar
+                            Sección</button>
+                        <hr class="my-4">
+                        <h2 class="fs-5 fw-bold mb-3">O Continua usando </h2>
+                        <button
+                            class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3 disabled"
+                            type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                height="16" fill="currentColor"
+                                class="bi bi-twitter-x" viewBox="0 0 16 16">
+                                <path
+                                    d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                            </svg> Continuar con X-Twitter
+                        </button>
+                        <button
+                            class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3 disabled"
+                            type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                height="16" fill="currentColor"
+                                class="bi bi-facebook" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                            </svg>Continuar con Facebofrok
+                        </button>
+                        <button
+                            class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3 disabled"
+                            type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                height="16" fill="currentColor"
+                                class="bi bi-google" viewBox="0 0 16 16">
+                                <path
+                                    d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z" />
+                            </svg> Continuar con Google
+                        </button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-success" href="register.html"
+                        role="button">Registrarse</a>
+                    <button type="button" class="btn btn-secondary"
+                        data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--SCRIPT IMPORT-->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</html>
