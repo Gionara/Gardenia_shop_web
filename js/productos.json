@@ -1,0 +1,236 @@
+{
+    "herramientas":{
+        "Tijeras":[
+            {
+                "nombre": "Tijeras podar asas grandes",
+                "precio": 10990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_1.png",
+                "Descripción": ""
+            },
+            {
+                "nombre": "Tijeras podar con mango rotatorio",
+                "precio": 14990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_2.png",
+                "Descripción": ""
+            },
+            {
+                "nombre": "Tijera de podar hojas curva micrp-tip",
+                "precio": 9990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_3.png",
+                "Descripción": ""
+            },
+            {
+                "nombre": "Tijera de podar de una mano corte bypass",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+                "Descripción": ""
+            }
+        ],
+        "palas":[
+            {                
+                "nombre": "",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+                "Descripción": ""
+            },
+            {                
+                "nombre": "",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+               "Descripción": ""
+            },
+            {                
+                "nombre": "",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+                "Descripción": ""
+            },
+            {                
+                "nombre": "",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+                "Descripción": ""}
+        ],
+        "otras_herramientas":[
+            {                
+                "nombre": "",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+                "Descripción": ""
+            },
+            {                
+                "nombre": "",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+               "Descripción": ""
+            },
+            {                
+                "nombre": "",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+                "Descripción": ""
+            },
+            {                
+                "nombre": "",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+                "Descripción": ""}
+        ]
+    },
+    "Insumos":{
+        "fertilizante":[
+            {
+                "nombre": "Tijeras podar asas grandes",
+                "precio": 10990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_1.png",
+                "Descripción": ""
+            },
+            {
+                "nombre": "Tijeras podar con mango rotatorio",
+                "precio": 14990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_2.png",
+                "Descripción": ""
+            },
+            {
+                "nombre": "Tijera de podar hojas curva micrp-tip",
+                "precio": 9990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_3.png",
+                "Descripción": ""
+            },
+            {
+                "nombre": "Tijera de podar de una mano corte bypass",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+                "Descripción": ""
+            }
+        ],
+        "tierra":[
+            {                
+                "nombre": "",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+                "Descripción": ""
+            },
+            {                
+                "nombre": "",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+               "Descripción": ""
+            },
+            {                
+                "nombre": "",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+                "Descripción": ""
+            },
+            {                
+                "nombre": "",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+                "Descripción": ""}
+        ],
+        "otros_insumos":[
+            {                
+                "nombre": "",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+                "Descripción": ""
+            },
+            {                
+                "nombre": "",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+               "Descripción": ""
+            },
+            {                
+                "nombre": "",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+                "Descripción": ""
+            },
+            {                
+                "nombre": "",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+                "Descripción": ""}
+        ]
+    },
+    "plantas_semillas":{
+        "flores":[
+            {
+                "nombre": "Tijeras podar asas grandes",
+                "precio": 10990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_1.png",
+                "Descripción": ""
+            },
+            {
+                "nombre": "Tijeras podar con mango rotatorio",
+                "precio": 14990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_2.png",
+                "Descripción": ""
+            },
+            {
+                "nombre": "Tijera de podar hojas curva micrp-tip",
+                "precio": 9990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_3.png",
+                "Descripción": ""
+            },
+            {
+                "nombre": "Tijera de podar de una mano corte bypass",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+                "Descripción": ""
+            }
+        ],
+        "plantas_arboles":[
+            {                
+                "nombre": "",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+                "Descripción": ""
+            },
+            {                
+                "nombre": "",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+               "Descripción": ""
+            },
+            {                
+                "nombre": "",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+                "Descripción": ""
+            },
+            {                
+                "nombre": "",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+                "Descripción": ""}
+        ],
+        "huerto":[
+            {                
+                "nombre": "",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+                "Descripción": ""
+            },
+            {                
+                "nombre": "",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+               "Descripción": ""
+            },
+            {                
+                "nombre": "",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+                "Descripción": ""
+            },
+            {                
+                "nombre": "",
+                "precio": 19990,
+                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+                "Descripción": ""}
+        ]
+    }
+}
