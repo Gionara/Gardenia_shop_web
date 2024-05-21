@@ -77,7 +77,7 @@
                 "Descripción": ""}
         ]
     },
-    "Insumos":{
+    "insumos":{
         "fertilizante":[
             {
                 "nombre": "Tijeras podar asas grandes",
