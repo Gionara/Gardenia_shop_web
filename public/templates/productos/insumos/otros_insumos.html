@@ -179,14 +179,17 @@
 
             </div>
             <div class="offcanvas-footer text-center">
-                <div class="offcanvas-footer text-center">
-                    <div id="total-container"></div>
-                    <button class="btn btn-secondary mt-3"
-                        id="vaciar-carrito">Vaciar Carrito </button>
-                    <button class="btn btn-secondary mt-3"
-                        id="pagar-carrito">Pagar
-                        Carrito</button>
+                <div id="total-container"></div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="btn btn-outline-danger mt-3 btn-sm "
+                        id="vaciar-carrito">
+                        <h6>
+                            <i class="bi bi-trash3-fill"></i>Vaciar Carrito
+                        </h6></button>
                 </div>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-success mt-3 btn-lg" id="pagar-carrito">Pagar
+                    Carrito</button></div>
             </div>
         </div>
         <div class="b-example-divider m-3"><p></p></div>

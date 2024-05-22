@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Mostrar el total
         const totalContainer = document.getElementById('total-container');
-        totalContainer.innerHTML = `Total: $${total.toFixed(2)}`;
+        totalContainer.innerHTML = `<h4>Total: $${total.toFixed(2)} </h4>`;
 
         // Actualizar el icono del carrito en el navbar
         const carritoIcono = document.getElementById('carrito-icono');
