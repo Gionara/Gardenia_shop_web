@@ -179,7 +179,7 @@
                                     <input type="text" class="form-control"
                                         id="nombre" placeholder value
                                         required>
-                                    <small class="text-danger"
+                                    <small class="text-danger col-12"
                                         id="nombre_error"></small>
 
                                 </div>
@@ -191,7 +191,7 @@
                                 <input type="text" class="form-control"
                                     id="apellido" placeholder value
                                     required>
-                                <small class="text-danger"
+                                <small class="text-danger col-12"
                                     id="apellido_error"></small>
 
                             </div>
@@ -205,7 +205,7 @@
                                         id="email"
                                         placeholder="nombre@correo.com"
                                         required>
-                                    <small class="text-danger"
+                                    <small class="text-danger col-12"
                                         id="email_error"></small>
 
                                 </div>
@@ -219,7 +219,7 @@
                                         id="confirm_email"
                                         placeholder="nombre@correo.com"
                                         required>
-                                    <small class="text-danger"
+                                    <small class="text-danger col-12"
                                         id="confirm_email_error"></small>
 
                                 </div>
@@ -237,7 +237,8 @@
                                         <i class="bi bi-eye"></i>
                                     </button>
                                 </div>
-                                <small class="text-danger"
+
+                                <small class="text-danger col-12"
                                     id="password_error"></small>
                             </div>
                             <div class="col-12">
@@ -254,7 +255,7 @@
                                         <i class="bi bi-eye"></i>
                                     </button>
                                 </div>
-                                <small class="text-danger"
+                                <small class="text-danger col-12"
                                     id="confirm_password_error"></small>
                             </div>
 
@@ -405,80 +406,10 @@
             </div>
         </div>
         <!--SCRIPT VALIDACION-->
-        <!--     <script>
-        const form = document.getElementById('formulario_registro');
-        const nombre = document.getElementById('nombre');
-        const apellido = document.getElementById('apellido');   
-        const email = document.getElementById('email');
-        const confirm_email = document.getElementById('confirm_email');
-        const password = document.getElementById('password');
-        const confirm_password = document.getElementById('confirm_password');
 
-        form.addEventListener('submit', function (event) {
-            if (form.checkValidity() === false) {
-                event.preventDefault();
-                event.stopPropagation();
-            }
+        
+       <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-            document.getElementById('nombre_error').innerHTML = '';
-            document.getElementById('apellido_error').innerHTML = '';
-            document.getElementById('email_error').innerHTML = '';
-            document.getElementById('confirm_email_error').innerHTML = '';
-            document.getElementById('password_error').innerHTML = '';
-            document.getElementById('confirm_password_error').innerHTML = '';
-
-            if (nombre.value === '' ) {
-                document.getElementById('nombre_error').innerHTML = 'Por favor ingrese su nombre';
-                               event.preventDefault();
-                event.stopPropagation();
-            }
-            if (apellido.value === '' ) {
-                document.getElementById('apellido_error').innerHTML = 'Por favor ingrese su apellido';
-                               event.preventDefault();
-                event.stopPropagation();
-            }
-            if (email.value === '' ) {
-                document.getElementById('email_error').innerHTML = 'Por favor ingrese su correo';
-                               event.preventDefault();
-                event.stopPropagation();
-            }
-            if (confirm_email.value === '' ) {
-                document.getElementById('confirm_email_error').innerHTML = 'Por favor confirme su correo';
-                               event.preventDefault();
-                event.stopPropagation();
-            }
-            if (password.value === '' ) {
-                document.getElementById('password_error').innerHTML = 'Por favor ingrese su contraseña';
-                               event.preventDefault();
-                event.stopPropagation();
-            }
-            if (confirm_password.value === '' ) {
-                document.getElementById('confirm_password_error').innerHTML = 'Por favor confirme su contraseña';
-                               event.preventDefault();
-                event.stopPropagation();
-            }
-
-            if (email.value !== confirm_email.value) {
-                document.getElementById('confirm_email_error').innerHTML = 'Los correos no coinciden';
-                event.preventDefault();
-                event.stopPropagation();
-            }
-            if (password.value !== confirm_password.value) {
-                document.getElementById('confirm_password_error').innerHTML = 'Las contraseñas no coinciden';
-                
-                event.preventDefault();
-                event.stopPropagation();
-            }
-   
-            form.sumbit();
-        });
-
-    </script> -->
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-Qkpl2tE1S2wRz4Z9m2XGyF0yP7B+HK5Nq5aPzFY4v6LI9p/v2V/zN4yKfGfIH5WQ"
-            crossorigin="anonymous"></script>
         <script>
         $(document).ready(function() {
             $('#formulario_registro').submit(function(event) {
@@ -496,6 +427,9 @@
                 if (nombre.length < 3) {
                     $('#nombre_error').text('El nombre debe tener al menos 3 caracteres.');
                     error = true;
+                } else if (!validateName(nombre)) {
+                     $('#nombre_error').text('El nombre no debe contener caracteres especiales ni números.');
+                      error = true;
                 } else {
                     $('#nombre_error').text('');
                 }
@@ -517,6 +451,9 @@
                 if (email !== confirmEmail) {
                     $('#confirm_email_error').text('Los correos electrónicos no coinciden.');
                     error = true;
+                } else if (!validateName(apellido)) {
+                    $('#apellido_error').text('El apellido no debe contener caracteres especiales ni números.');
+                    error = true;
                 } else {
                     $('#confirm_email_error').text('');
                 }
@@ -535,12 +472,33 @@
                     $('#confirm_password_error').text('');
                 }
 
+                if (!validatePassword(password)) {
+                    $('#password_error').text('La contraseña debe contener al menos una letra mayúscula y un número');
+                    error = true;
+                } else {
+                    $('#password_error').text('');
+                }
+
                 if (!error) {
-                    // Aquí puedes agregar la lógica para enviar el formulario al servidor si no hay errores
+                    // Envío del formulario
                     this.submit();
                 }
             });
+            function validateName(nombre) {
+            var regex = /^[a-zA-Z\s]*$/;
+             return regex.test(nombre);
+            }
+            function validateName(apellido) {
+            var regex = /^[a-zA-Z\s]*$/;
+             return regex.test(apellido);
+            }
 
+            function validatePassword(password) {
+            // La contraseña debe contener al menos una letra mayúscula y un número
+            var uppercaseRegex = /[A-Z]/;
+            var numberRegex = /[0-9]/;
+            return uppercaseRegex.test(password) && numberRegex.test(password);
+        }        
             function validateEmail(email) {
                 var re = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
                 return re.test(email);
