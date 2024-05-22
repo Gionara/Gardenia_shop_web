@@ -4,25 +4,25 @@
             {
                 "nombre": "Tijeras podar asas grandes",
                 "precio": 10990,
-                "imagen": "Gardenia_shop_web/static/img/productos/tijera_1.png",
-                "Descripción": ""
+                "imagen": "../../../static/img/productos/tijera_1.png",
+                "Descripción": "jhgfd"
             },
             {
                 "nombre": "Tijeras podar con mango rotatorio",
                 "precio": 14990,
-                "imagen": "Gardenia_shop_web/static/img/productos/tijera_2.png",
+                "imagen": "../../../static/img/productos/tijera_2.png",
                 "Descripción": ""
             },
             {
                 "nombre": "Tijera de podar hojas curva micrp-tip",
                 "precio": 9990,
-                "imagen": "Gardenia_shop_web/static/img/productos/tijera_3.png",
+                "imagen": "../../../static/img/productos/tijera_3.png",
                 "Descripción": ""
             },
             {
                 "nombre": "Tijera de podar de una mano corte bypass",
                 "precio": 19990,
-                "imagen": "Gardenia_shop_web/static/img/productos/tijera_4.png",
+                "imagen": "../../../static/img/productos/tijera_4.png",
                 "Descripción": ""
             }
         ],

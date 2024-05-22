@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function(){
           if (url.includes('templates/productos/insumos/otros_insumos.html')) { 
                 productos = data.insumos.otros_insumos;}
 
-          if (url.includes('/templates/productos/all_products.html') { 
+          if (url.includes('templates/productos/all_products.html')) { 
               Object.keys(data).forEach(categoria => {
                   if (data[categoria]) {
                       Object.keys(data[categoria]).forEach(subcategoria => {
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function(){
               const card = document.createElement('div');
               card.classList.add('card');
 
-              const nombre = document.createElement('h2');
+              const nombre = document.createElement('h5');
               nombre.textContent = producto.nombre;
 
               const imagen = document.createElement('img');

@@ -12,29 +12,28 @@
             crossorigin="anonymous">
         <link rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-        <link rel="stylesheet" href="../public/static/stylecss.css">
+        <link rel="stylesheet" href="/static/stylecss.css">
         <style>
             main {
                 position: relative;
                 margin: 0;
                 padding: 0;
                 font-family: Arial, sans-serif;
-                overflow: hidden; /* Esto asegura que no haya scrolls inesperados */
+                overflow: hidden; 
             }
             
             main::before {
                 content: "";
-                position: fixed; /* Fija la imagen al fondo */
-                top: 0;
+                position: fixed; 
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background-image: url('../public/static/img/logo/logo_line.png'); /* Reemplaza 'ruta-de-tu-imagen.jpg' con la ruta de tu imagen */
-                background-size:contain; /* Ajusta la imagen para que cubra todo el fondo */
-                background-repeat: no-repeat; /* Evita que la imagen se repita */
-                background-position: center; /* Centra la imagen de fondo */
-                opacity: 0.2; /* Ajusta la transparencia de la imagen */
-                z-index: -1; /* Coloca la imagen detrás del contenido */
+                background-image: url('../static/img/logo/logo_line.png'); 
+                background-size:contain; 
+                background-repeat: no-repeat; 
+                background-position: center;
+                opacity: 0.2;
+                z-index: -1; 
             }
     
             .b-example-divider {
@@ -59,7 +58,7 @@
         <nav class="navbar navbar-expand-md bg-dark sticky-top border-bottom"
             data-bs-theme="dark">
             <div class="container justify-content-between">
-                <img src="../public/static/img/logo/logo_color.png" alt width="30">
+                <img src="/static/img/logo/logo_color.png" alt width="30">
                 <a class="navbar-brand d-md-none" href="../index.html">
                     <a class="navbar-brand" href="../index.html">Gardenia
                         Shop</a>
@@ -74,7 +73,7 @@
                     id="offcanvas" aria-labelledby="offcanvasLabel">
 
                     <div class="offcanvas-header justify-content-between">
-                        <img src="../public/static/img/logo/logo_outline_w.png"
+                        <img src="/static/img/logo/logo_outline_w.png"
                             width="30px" alt
                             style="margin-right: 15px;">
                         <h5 class="offcanvas-title" id="offcanvasLabel">Gardenia
@@ -290,7 +289,7 @@
             <div class="row" style="padding: 3%;color: #f8f9fa;">
                 <div class="col-12 col-md">
                     <row>
-                        <img src="../public/static/img/logo/logo_color.png" alt
+                        <img src="/static/img/logo/logo_color.png" alt
                             width="80px"
                             style="padding-right: 4px;">
                         <a class="navbar-brand d-md-none" href="../index.html">
@@ -332,7 +331,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header bg-dark">
-                    <img src="../public/static/img/logo/logo_outline_w.png" alt
+                    <img src="/static/img/logo/logo_outline_w.png" alt
                         width="50px"
                         style="padding-right: 4px;">
                     <h5 class="modal-title" Style="color: var(--color-light)"
