@@ -131,8 +131,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Evento click para el botón de pagar
     document.getElementById('pagar-carrito').addEventListener('click', function() {
-        window.location.href = "templates/carrito_compras.html";
+        window.location.href = "../templates/carrito_compras.html";
     });
+
+     // Evento click para el botón de vaciar carrito
+    document.getElementById('vaciar-carrito').addEventListener('click', function() {
+        carrito = [];
+        actualizarCarrito();
+        guardarCarrito();
+    })
 
     // Función de Listener de los botones de añadir al carrito
     function añadirEventListeners() {
@@ -322,15 +329,13 @@ document.addEventListener("DOMContentLoaded", function() {
     if (ordenarBtn) {
         ordenarBtn.addEventListener('click', ordenarProductosPorPrecio);
     }
+    
+
+
     añadirEventListeners(); // Llamar la función para que se añadan los event listeners
     cargarProductos(); // Cargar los productos al cargar el DOM
     cargarCarrito(); // Cargar el carrito desde localStorage al iniciar
 
-    // Evento click para el botón de vaciar carrito
-/*     document.getElementById('vaciar-carrito').addEventListener('click', function() {
-        carrito = [];
-        actualizarCarrito();
-        guardarCarrito();
-    }); */
+    
     
 });

@@ -19,9 +19,11 @@
         <nav class="navbar navbar-expand-md bg-dark sticky-top border-bottom"
             data-bs-theme="dark">
             <div class="container justify-content-between">
-                <img src="../../../static/img/logo/logo_color.png" alt width="30">
+                <img src="../../../static/img/logo/logo_color.png" alt
+                    width="30">
                 <a class="navbar-brand d-md-none" href="../../../index.html">
-                    <a class="navbar-brand" href="../../../index.html">Gardenia Shop</a>
+                    <a class="navbar-brand" href="../../../index.html">Gardenia
+                        Shop</a>
                 </a>
                 <button class="navbar-toggler" type="button"
                     data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
@@ -139,51 +141,56 @@
                                     </svg>
                                     Iniciar Sesión
                                 </button>
-                            </li> 
-                            <button class="btn btn-outline-success" type="button"
-                            data-bs-toggle="offcanvas"
-                            data-bs-target="#carrito-offcanvas"
-                            aria-controls="offcanvasCarrito">
-                            <i class="bi bi-cart"></i>
-                            <span id="carrito-icono">0</span></ul>
+                            </li>
+                            <button class="btn btn-outline-success"
+                                type="button"
+                                data-bs-toggle="offcanvas"
+                                data-bs-target="#carrito-offcanvas"
+                                aria-controls="offcanvasCarrito">
+                                <i class="bi bi-cart"></i>
+                                <span id="carrito-icono">0</span></ul>
                         </button>
-                       
+
                     </div>
                 </div>
             </div>
         </nav>
 
-       <!--MAIN-->
-       <main>
+        <!--MAIN-->
+        <main>
 
-        <div class="d-grid gap-2 d-md-flex btn-sm justify-content-md-end">
-            <button class="btn btn-outline-secondary me-md-2"
-                id="ordenar-btn" type="button">Ordenar de menor precio a
-                mayor</button>
-        </div>
+            <div class="d-grid gap-2 d-md-flex btn-sm justify-content-md-end">
+                <button class="btn btn-outline-secondary me-md-2"
+                    id="ordenar-btn" type="button">Ordenar de menor precio a
+                    mayor</button>
+            </div>
 
-        <div id="productos-container"></div>
-    </main>
-    <!-- Off-canvas Carrito -->
-    <div class="offcanvas offcanvas-end" tabindex="-1"
-        id="carrito-offcanvas">
-        <div class="offcanvas-header bg-dark text-white text-center">
-            <img src="../../../static/img/logo/logo_outline_w.png"
-                alt="Logo" width="40" height="40">
-            <h5 class="fw-bold mx-auto">Carrito de compras</h5>
-            <button type="button" class="btn-close btn-close-white"
-                data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <div id="productos-container"></div>
+        </main>
+        <!-- Off-canvas Carrito -->
+        <div class="offcanvas offcanvas-end" tabindex="-1"
+            id="carrito-offcanvas">
+            <div class="offcanvas-header bg-dark text-white text-center">
+                <img src="../../../static/img/logo/logo_outline_w.png"
+                    alt="Logo" width="40" height="40">
+                <h5 class="fw-bold mx-auto">Carrito de compras</h5>
+                <button type="button" class="btn-close btn-close-white"
+                    data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div id="carrito-container"></div>
+
+            </div>
+            <div class="offcanvas-footer text-center">
+                <div class="offcanvas-footer text-center">
+                    <div id="total-container"></div>
+                    <button class="btn btn-secondary mt-3"
+                        id="vaciar-carrito">Vaciar Carrito </button>
+                    <button class="btn btn-secondary mt-3"
+                        id="pagar-carrito">Pagar
+                        Carrito</button>
+                </div>
         </div>
-        <div class="offcanvas-body">
-            <div id="carrito-container"></div>
-            
-        </div>
-        <div class="offcanvas-footer text-center">
-            <div id="total-container"></div>
-            <button class="btn btn-secondary mt-3" id="pagar-carrito">Pagar
-                Carrito</button>
-        </div>
-    </div>
         <!-- FOOTER-->
 
         <footer class="container-fluid bg-dark">
@@ -193,8 +200,10 @@
                         <img src="../../../static/img/logo/logo_color.png" alt
                             width="80px"
                             style="padding-right: 4px;">
-                        <a class="navbar-brand d-md-none" href="../../../index.html">
-                            <a class="navbar-brand" href="../../../index.html">Gardenia
+                        <a class="navbar-brand d-md-none"
+                            href="../../../index.html">
+                            <a class="navbar-brand"
+                                href="../../../index.html">Gardenia
                                 Shop</a>
                         </a></row>
                 </div>

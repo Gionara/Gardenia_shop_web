@@ -141,15 +141,16 @@
                                     </svg>
                                     Iniciar Sesión
                                 </button>
-                            </li> 
-                            <button class="btn btn-outline-success" type="button"
-                            data-bs-toggle="offcanvas"
-                            data-bs-target="#carrito-offcanvas"
-                            aria-controls="offcanvasCarrito">
-                            <i class="bi bi-cart"></i>
-                            <span id="carrito-icono">0</span></ul>
+                            </li>
+                            <button class="btn btn-outline-success"
+                                type="button"
+                                data-bs-toggle="offcanvas"
+                                data-bs-target="#carrito-offcanvas"
+                                aria-controls="offcanvasCarrito">
+                                <i class="bi bi-cart"></i>
+                                <span id="carrito-icono">0</span></ul>
                         </button>
-                       
+
                     </div>
                 </div>
             </div>
@@ -167,7 +168,7 @@
             <div id="productos-container"></div>
         </main>
         <!-- Off-canvas Carrito -->
-      
+
         <div class="offcanvas offcanvas-end" tabindex="-1"
             id="carrito-offcanvas">
             <div class="offcanvas-header bg-dark text-white text-center">
@@ -179,144 +180,157 @@
             </div>
             <div class="offcanvas-body">
                 <div id="carrito-container"></div>
-                
+
             </div>
             <div class="offcanvas-footer text-center">
-                <div id="total-container"></div>
-                <button class="btn btn-secondary mt-3" id="pagar-carrito">Pagar
-                    Carrito</button>
+                <div class="offcanvas-footer text-center">
+                    <div id="total-container"></div>
+                    <button class="btn btn-secondary mt-3"
+                        id="vaciar-carrito">Vaciar Carrito </button>
+                    <button class="btn btn-secondary mt-3"
+                        id="pagar-carrito">Pagar
+                        Carrito</button>
+                </div>
             </div>
-        </div>
-        <!-- FOOTER-->
+            <!-- FOOTER-->
 
-        <footer class="container-fluid bg-dark">
-            <div class="row" style="padding: 3%;color: #f8f9fa;">
-                <div class="col-12 col-md">
-                    <row>
-                        <img src="../../../static/img/logo/logo_color.png" alt
-                            width="80px"
+            <footer class="container-fluid bg-dark">
+                <div class="row" style="padding: 3%;color: #f8f9fa;">
+                    <div class="col-12 col-md">
+                        <row>
+                            <img src="../../../static/img/logo/logo_color.png"
+                                alt
+                                width="80px"
+                                style="padding-right: 4px;">
+                            <a class="navbar-brand d-md-none"
+                                href="../../../index.html">
+                                <a class="navbar-brand"
+                                    href="../../../index.html">Gardenia
+                                    Shop</a>
+                            </a></row>
+                    </div>
+                    <div class="col-6 col-md colored">
+                        <ul class="list-unstyled text-small">
+                            <li><a href="../../sobre_nosotros.html"><h5
+                                        class="titulo_blanco">Sobre
+                                        nosotros</h5></a></li>
+                        </ul>
+                        <ul class="list-unstyled text-small">
+                            <li><a href="../../politicas.html"><h5
+                                        class="titulo_blanco">Politicas de
+                                        Privacidad</h5></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md ">
+                        <div
+                            class="d-flex justify-content-center"><h5>Síguenos</h5></div>
+                        <div class="d-flex justify-content-center">
+                            <div> <a href="url facebook"><i
+                                        class="bi bi-facebook"></i></a> </div>
+                            <div> <a href="url twitter"><i
+                                        class="bi bi-twitter"></i></a> </div>
+                            <div> <a href="url instagram"><i
+                                        class="bi bi-instagram"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </body>
+
+        <!-- MODALS-->
+        <div class="modal fade" id="modalSignin" tabindex="-1"
+            aria-labelledby="modalSigninLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark">
+                        <img src="../../../static/img/logo/logo_outline_w.png"
+                            alt
+                            width="50px"
                             style="padding-right: 4px;">
-                        <a class="navbar-brand d-md-none"
-                            href="../../../index.html">
-                            <a class="navbar-brand"
-                                href="../../../index.html">Gardenia
-                                Shop</a>
-                        </a></row>
-                </div>
-                <div class="col-6 col-md colored">
-                    <ul class="list-unstyled text-small">
-                        <li><a href="../../sobre_nosotros.html"><h5
-                                    class="titulo_blanco">Sobre
-                                    nosotros</h5></a></li>
-                    </ul>
-                    <ul class="list-unstyled text-small">
-                        <li><a href="../../politicas.html"><h5
-                                    class="titulo_blanco">Politicas de
-                                    Privacidad</h5></a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md ">
-                    <div
-                        class="d-flex justify-content-center"><h5>Síguenos</h5></div>
-                    <div class="d-flex justify-content-center">
-                        <div> <a href="url facebook"><i
-                                    class="bi bi-facebook"></i></a> </div>
-                        <div> <a href="url twitter"><i
-                                    class="bi bi-twitter"></i></a> </div>
-                        <div> <a href="url instagram"><i
-                                    class="bi bi-instagram"></i></a></div>
+                        <h5 class="modal-title"
+                            Style="color: var(--color-light)"
+                            id="modalSigninLabel">Inicio de Sesión</h5>
+                        <button type="button" class="btn-close "
+                            Style="color: var(--color-dark)"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-5 pt-0">
+                        <form class>
+                            <div class="form-floating mb-3 "
+                                style="padding-top: 2%;">
+                                <input type="email"
+                                    class="form-control rounded-3"
+                                    id="floatingInput"
+                                    placeholder="name@example.com">
+                                <label for="floatingInput">Correo
+                                    Electronico</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="password"
+                                    class="form-control rounded-3"
+                                    id="floatingPassword"
+                                    placeholder="Password">
+                                <label for="floatingPassword">Contraseña</label>
+                            </div>
+                            <button type="submit"
+                                class="w-100 mb-2 btn btn-lg rounded-3 btn-warning"
+                                style="color:var(--color-dark);">Iniciar
+                                Sección</button>
+                            <hr class="my-4">
+                            <h2 class="fs-5 fw-bold mb-3">O Continua usando
+                            </h2>
+                            <button
+                                class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3 disabled"
+                                type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16" fill="currentColor"
+                                    class="bi bi-twitter-x" viewBox="0 0 16 16">
+                                    <path
+                                        d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                                </svg> Continuar con X-Twitter
+                            </button>
+                            <button
+                                class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3 disabled"
+                                type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16" fill="currentColor"
+                                    class="bi bi-facebook" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                                </svg>Continuar con Facebofrok
+                            </button>
+                            <button
+                                class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3 disabled"
+                                type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16" fill="currentColor"
+                                    class="bi bi-google" viewBox="0 0 16 16">
+                                    <path
+                                        d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z" />
+                                </svg> Continuar con Google
+                            </button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn btn-success" href="../../register.html"
+                            role="button">Registrarse</a>
+                        <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Cerrar</button>
                     </div>
                 </div>
             </div>
-        </footer>
-    </body>
-
-    <!-- MODALS-->
-    <div class="modal fade" id="modalSignin" tabindex="-1"
-        aria-labelledby="modalSigninLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header bg-dark">
-                    <img src="../../../static/img/logo/logo_outline_w.png" alt
-                        width="50px"
-                        style="padding-right: 4px;">
-                    <h5 class="modal-title" Style="color: var(--color-light)"
-                        id="modalSigninLabel">Inicio de Sesión</h5>
-                    <button type="button" class="btn-close "
-                        Style="color: var(--color-dark)"
-                        data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-5 pt-0">
-                    <form class>
-                        <div class="form-floating mb-3 "
-                            style="padding-top: 2%;">
-                            <input type="email" class="form-control rounded-3"
-                                id="floatingInput"
-                                placeholder="name@example.com">
-                            <label for="floatingInput">Correo
-                                Electronico</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="password"
-                                class="form-control rounded-3"
-                                id="floatingPassword" placeholder="Password">
-                            <label for="floatingPassword">Contraseña</label>
-                        </div>
-                        <button type="submit"
-                            class="w-100 mb-2 btn btn-lg rounded-3 btn-warning"
-                            style="color:var(--color-dark);">Iniciar
-                            Sección</button>
-                        <hr class="my-4">
-                        <h2 class="fs-5 fw-bold mb-3">O Continua usando </h2>
-                        <button
-                            class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3 disabled"
-                            type="submit">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                height="16" fill="currentColor"
-                                class="bi bi-twitter-x" viewBox="0 0 16 16">
-                                <path
-                                    d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
-                            </svg> Continuar con X-Twitter
-                        </button>
-                        <button
-                            class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3 disabled"
-                            type="submit">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                height="16" fill="currentColor"
-                                class="bi bi-facebook" viewBox="0 0 16 16">
-                                <path
-                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
-                            </svg>Continuar con Facebofrok
-                        </button>
-                        <button
-                            class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3 disabled"
-                            type="submit">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                height="16" fill="currentColor"
-                                class="bi bi-google" viewBox="0 0 16 16">
-                                <path
-                                    d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z" />
-                            </svg> Continuar con Google
-                        </button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <a class="btn btn-success" href="../../register.html"
-                        role="button">Registrarse</a>
-                    <button type="button" class="btn btn-secondary"
-                        data-bs-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
         </div>
-    </div>
-    <!--SCRIPT IMPORT-->
-    <script src="../../../js/main.js"></script>
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <script
-        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-</html>
+        <!--SCRIPT IMPORT-->
+        <script src="../../../js/main.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    </html>
