@@ -52,104 +52,113 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-
     // Actualizar la vista previa del carrito
     function actualizarCarrito() {
         const carritoContainer = document.getElementById('carrito-container');
-        carritoContainer.innerHTML = '';
-        let total = 0;
+        if (carritoContainer) {
+            carritoContainer.innerHTML = '';
+            let total = 0;
 
-        carrito.forEach(item => {
-            total += item.producto.precio * item.cantidad;
-            const itemElement = document.createElement('div');
-            itemElement.classList.add('carrito-item');
-            itemElement.innerHTML = `
-                 <div class="row m-3">
-                <img class="col-6" src="${item.producto.imagen}" width="" alt="${item.producto.nombre}">
-                <div class="col-6 ">
-                <div class="carrito-item-nombre">${item.producto.nombre}</div>
-                <div class="carrito-item-precio">Precio: $${(item.producto.precio * item.cantidad).toFixed(2)}</div>
-                </div>
-                <div class="input-group carrito-item-cantidad col-6 justify-content-center m-3">
-                    <span class="input-group-text">Cantidad:</span>
-                    <button class="btn btn-outline-secondary btn-sm menos-btn" data-nombre="${item.producto.nombre}">-</button>
-                    <input type="text" class="form-control form-control-sm cantidad-input justify-content-center aling-item-center" value="${item.cantidad}" readonly>
-                    <button class="btn btn-outline-secondary btn-sm mas-btn" data-nombre="${item.producto.nombre}">+</button>
-                
-                <button class="btn btn-sm btn-danger eliminar-producto" data-nombre="${item.producto.nombre}">
-                    <i class="bi bi-trash"></i>
-                </button>
-                </div>
-            </div>
-            `;
-            carritoContainer.appendChild(itemElement);
-        });
+            carrito.forEach(item => {
+                total += item.producto.precio * item.cantidad;
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('carrito-item');
+                itemElement.innerHTML = `
+                    <div class="row m-3">
+                        <img class="col-6" src="${item.producto.imagen}" width="" alt="${item.producto.nombre}">
+                        <div class="col-6 ">
+                            <div class="carrito-item-nombre">${item.producto.nombre}</div>
+                            <div class="carrito-item-precio">Precio: $${(item.producto.precio * item.cantidad).toFixed(2)}</div>
+                        </div>
+                        <div class="input-group carrito-item-cantidad col-6 justify-content-center m-3">
+                            <span class="input-group-text">Cantidad:</span>
+                            <button class="btn btn-outline-secondary btn-sm menos-btn" data-nombre="${item.producto.nombre}">-</button>
+                            <input type="text" class="form-control form-control-sm cantidad-input justify-content-center aling-item-center" value="${item.cantidad}" readonly>
+                            <button class="btn btn-outline-secondary btn-sm mas-btn" data-nombre="${item.producto.nombre}">+</button>
+                            <button class="btn btn-sm btn-danger eliminar-producto" data-nombre="${item.producto.nombre}">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                carritoContainer.appendChild(itemElement);
+            });
 
-        // Mostrar el total
-        const totalContainer = document.getElementById('total-container');
-        totalContainer.innerHTML = `<h4>Total: $${total.toFixed(2)} </h4>`;
+            // Mostrar el total
+            const totalContainer = document.getElementById('total-container');
+            if (totalContainer) {
+                totalContainer.innerHTML = `<h4>Total: $${total.toFixed(2)} </h4>`;
+            }
 
-        // Actualizar el icono del carrito en el navbar
-        const carritoIcono = document.getElementById('carrito-icono');
-        const totalCantidad = carrito.reduce((total, item) => total + item.cantidad, 0);
-        carritoIcono.textContent = totalCantidad;
+            // Actualizar el icono del carrito en el navbar
+            const carritoIcono = document.getElementById('carrito-icono');
+            if (carritoIcono) {
+                const totalCantidad = carrito.reduce((total, item) => total + item.cantidad, 0);
+                carritoIcono.textContent = totalCantidad;
+            }
 
-        // mostrar la cantidad total de producto
-        const cantidadTotalCarrito = document.getElementById('cantidad-total');
-        const totalCantidadCarrito = carrito.reduce((total, item) => total + item.cantidad, 0);
-        cantidadTotalCarrito.textContent = totalCantidadCarrito;
-        cantidadTotalCarrito.innerHTML = `<h5>Cantidad de Productos: ${totalCantidadCarrito} </h4>`;
+            // mostrar la cantidad total de producto
+            const cantidadTotalCarrito = document.getElementById('cantidad-total');
+            if (cantidadTotalCarrito) {
+                const totalCantidadCarrito = carrito.reduce((total, item) => total + item.cantidad, 0);
+                cantidadTotalCarrito.textContent = totalCantidadCarrito;
+                cantidadTotalCarrito.innerHTML = `<h5>Cantidad de Productos: ${totalCantidadCarrito} </h5>`;
+            }
 
-        // Añadir event listeners para modificar cantidad y eliminar productos
-        document.querySelectorAll('.menos-btn').forEach(button => {
-            button.addEventListener('click', function () {
-                const nombre = this.getAttribute('data-nombre');
-                const producto = carrito.find(item => item.producto.nombre === nombre).producto;
-                const cantidadInput = this.nextElementSibling;
-                let cantidad = parseInt(cantidadInput.value);
-                if (cantidad > 1) {
-                    cantidad--;
+            // Añadir event listeners para modificar cantidad y eliminar productos
+            document.querySelectorAll('.menos-btn').forEach(button => {
+                button.addEventListener('click', function () {
+                    const nombre = this.getAttribute('data-nombre');
+                    const producto = carrito.find(item => item.producto.nombre === nombre).producto;
+                    const cantidadInput = this.nextElementSibling;
+                    let cantidad = parseInt(cantidadInput.value);
+                    if (cantidad > 1) {
+                        cantidad--;
+                        cantidadInput.value = cantidad;
+                        modificarCantidad(producto, cantidad);
+                    }
+                });
+            });
+
+            document.querySelectorAll('.mas-btn').forEach(button => {
+                button.addEventListener('click', function () {
+                    const nombre = this.getAttribute('data-nombre');
+                    const producto = carrito.find(item => item.producto.nombre === nombre).producto;
+                    const cantidadInput = this.previousElementSibling;
+                    let cantidad = parseInt(cantidadInput.value);
+                    cantidad++;
                     cantidadInput.value = cantidad;
                     modificarCantidad(producto, cantidad);
-                }
+                });
             });
-        });
 
-        document.querySelectorAll('.mas-btn').forEach(button => {
-            button.addEventListener('click', function () {
-                const nombre = this.getAttribute('data-nombre');
-                const producto = carrito.find(item => item.producto.nombre === nombre).producto;
-                const cantidadInput = this.previousElementSibling;
-                let cantidad = parseInt(cantidadInput.value);
-                cantidad++;
-                cantidadInput.value = cantidad;
-                modificarCantidad(producto, cantidad);
+            document.querySelectorAll('.eliminar-producto').forEach(button => {
+                button.addEventListener('click', function () {
+                    const nombre = this.getAttribute('data-nombre');
+                    const producto = carrito.find(item => item.producto.nombre === nombre).producto;
+                    eliminarProducto(producto);
+                });
             });
-        });
+        }
+    }
 
-        document.querySelectorAll('.eliminar-producto').forEach(button => {
-            button.addEventListener('click', function () {
-                const nombre = this.getAttribute('data-nombre');
-                const producto = carrito.find(item => item.producto.nombre === nombre).producto;
-                eliminarProducto(producto);
-            });
+    // Evento click para el botón de pagar
+    const pagarCarrito = document.getElementById('pagar-carrito');
+    if (pagarCarrito) {
+        pagarCarrito.addEventListener('click', function () {
+            window.location.href = "/templates/carro_compras.html";
         });
     }
 
-
-
-
-    // Evento click para el botón de pagar
-    document.getElementById('pagar-carrito').addEventListener('click', function () {
-        window.location.href = "/templates/carro_compras.html";
-    });
-
     // Evento click para el botón de vaciar carrito
-    document.getElementById('vaciar-carrito').addEventListener('click', function () {
-        carrito = [];
-        actualizarCarrito();
-        guardarCarrito();
-    })
+    const vaciarCarrito = document.getElementById('vaciar-carrito');
+    if (vaciarCarrito) {
+        vaciarCarrito.addEventListener('click', function () {
+            carrito = [];
+            actualizarCarrito();
+            guardarCarrito();
+        });
+    }
 
     // Función de Listener de los botones de añadir al carrito
     function añadirEventListeners() {
@@ -218,90 +227,92 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Función para mostrar los productos en el DOM
     function mostrarProductos(productos) {
-        productosContainer.innerHTML = '';
+        if (productosContainer) {
+            productosContainer.innerHTML = '';
 
-        productos.forEach(producto => {
-            const card = document.createElement('div');
-            card.classList.add('card');
+            productos.forEach(producto => {
+                const card = document.createElement('div');
+                card.classList.add('card');
 
-            const nombre = document.createElement('h5');
-            nombre.classList.add('card-title');
-            nombre.textContent = producto.nombre;
+                const nombre = document.createElement('h5');
+                nombre.classList.add('card-title');
+                nombre.textContent = producto.nombre;
 
-            const imagen = document.createElement('img');
-            imagen.classList.add('card-img-top');
-            imagen.src = producto.imagen;
-            imagen.alt = producto.nombre;
+                const imagen = document.createElement('img');
+                imagen.classList.add('card-img-top');
+                imagen.src = producto.imagen;
+                imagen.alt = producto.nombre;
 
-            const precio = document.createElement('p');
-            precio.classList.add('card-text');
-            precio.textContent = `Precio: $${producto.precio.toFixed(0)}`;
+                const precio = document.createElement('p');
+                precio.classList.add('card-text');
+                precio.textContent = `Precio: $${producto.precio.toFixed(0)}`;
 
-            const detallesBtn = document.createElement('button');
-            detallesBtn.classList.add('btn', 'btn-outline-secondary', 'detalles-btn');
-            detallesBtn.textContent = 'Detalles';
+                const detallesBtn = document.createElement('button');
+                detallesBtn.classList.add('btn', 'btn-outline-secondary', 'detalles-btn');
+                detallesBtn.textContent = 'Detalles';
 
-            const añadirBtn = document.createElement('button');
-            añadirBtn.classList.add('btn', 'btn-outline-secondary', 'añadir-btn');
-            añadirBtn.type = 'submit';
-            añadirBtn.textContent = 'Añadir al Carrito';
+                const añadirBtn = document.createElement('button');
+                añadirBtn.classList.add('btn', 'btn-outline-secondary', 'añadir-btn');
+                añadirBtn.type = 'submit';
+                añadirBtn.textContent = 'Añadir al Carrito';
 
-            const cantidadContainer = document.createElement('div');
-            cantidadContainer.classList.add('input-group', 'mt-3');
+                const cantidadContainer = document.createElement('div');
+                cantidadContainer.classList.add('input-group', 'mt-3');
 
-            const menosBtn = document.createElement('button');
-            menosBtn.classList.add('btn', 'btn-outline-secondary');
-            menosBtn.textContent = '-';
+                const menosBtn = document.createElement('button');
+                menosBtn.classList.add('btn', 'btn-outline-secondary');
+                menosBtn.textContent = '-';
 
-            const cantidadInput = document.createElement('input');
-            cantidadInput.classList.add('form-control');
-            cantidadInput.type = 'text';
-            cantidadInput.value = '1';
-            cantidadInput.readOnly = true;
+                const cantidadInput = document.createElement('input');
+                cantidadInput.classList.add('form-control');
+                cantidadInput.type = 'text';
+                cantidadInput.value = '1';
+                cantidadInput.readOnly = true;
 
-            const masBtn = document.createElement('button');
-            masBtn.classList.add('btn', 'btn-outline-secondary');
-            masBtn.textContent = '+';
+                const masBtn = document.createElement('button');
+                masBtn.classList.add('btn', 'btn-outline-secondary');
+                masBtn.textContent = '+';
 
-            menosBtn.addEventListener('click', () => {
-                let cantidad = parseInt(cantidadInput.value);
-                if (cantidad > 1) {
-                    cantidad--;
+                menosBtn.addEventListener('click', () => {
+                    let cantidad = parseInt(cantidadInput.value);
+                    if (cantidad > 1) {
+                        cantidad--;
+                        cantidadInput.value = cantidad;
+                    }
+                });
+
+                masBtn.addEventListener('click', () => {
+                    let cantidad = parseInt(cantidadInput.value);
+                    cantidad++;
                     cantidadInput.value = cantidad;
-                }
+                });
+
+                cantidadContainer.appendChild(menosBtn);
+                cantidadContainer.appendChild(cantidadInput);
+                cantidadContainer.appendChild(masBtn);
+
+                const descripcion = document.createElement('div');
+                descripcion.classList.add('descripcion');
+                descripcion.textContent = producto.Descripción;
+                descripcion.style.display = 'none';
+
+                card.appendChild(nombre);
+                card.appendChild(imagen);
+                card.appendChild(precio);
+                card.appendChild(detallesBtn);
+                card.appendChild(descripcion);
+                card.appendChild(cantidadContainer);
+                card.appendChild(añadirBtn);
+
+                productosContainer.appendChild(card);
+
+                detallesBtn.addEventListener('mouseover', () => toggleDescripcion(descripcion, true));
+                detallesBtn.addEventListener('mouseout', () => toggleDescripcion(descripcion, false));
+                detallesBtn.addEventListener('click', () => toggleDescripcion(descripcion));
             });
 
-            masBtn.addEventListener('click', () => {
-                let cantidad = parseInt(cantidadInput.value);
-                cantidad++;
-                cantidadInput.value = cantidad;
-            });
-
-            cantidadContainer.appendChild(menosBtn);
-            cantidadContainer.appendChild(cantidadInput);
-            cantidadContainer.appendChild(masBtn);
-
-            const descripcion = document.createElement('div');
-            descripcion.classList.add('descripcion');
-            descripcion.textContent = producto.Descripción;
-            descripcion.style.display = 'none';
-
-            card.appendChild(nombre);
-            card.appendChild(imagen);
-            card.appendChild(precio);
-            card.appendChild(detallesBtn);
-            card.appendChild(descripcion);
-            card.appendChild(cantidadContainer);
-            card.appendChild(añadirBtn);
-
-            productosContainer.appendChild(card);
-
-            detallesBtn.addEventListener('mouseover', () => toggleDescripcion(descripcion, true));
-            detallesBtn.addEventListener('mouseout', () => toggleDescripcion(descripcion, false));
-            detallesBtn.addEventListener('click', () => toggleDescripcion(descripcion));
-        });
-
-        añadirEventListeners(); // Asegurarse de que los botones "Añadir al Carrito" tengan los listeners correctos
+            añadirEventListeners(); // Asegurarse de que los botones "Añadir al Carrito" tengan los listeners correctos
+        }
     }
 
     // Función para mostrar u ocultar la descripción de un producto
@@ -326,8 +337,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-
-
     // Función para ordenar los productos por precio de menor a mayor
     function ordenarProductosPorPrecio() {
         productos.sort((a, b) => a.precio - b.precio); // Ordenar los productos por precio
@@ -340,12 +349,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ordenarBtn.addEventListener('click', ordenarProductosPorPrecio);
     }
 
-
-
-    añadirEventListeners(); // Llamar la función para que se añadan los event listeners
     cargarProductos(); // Cargar los productos al cargar el DOM
     cargarCarrito(); // Cargar el carrito desde localStorage al iniciar
-
-
 
 });
