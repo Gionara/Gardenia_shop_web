@@ -1,8 +1,8 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
     // Evitar que se cierre el dropdown al hacer clic dentro
-    document.querySelectorAll('.dropdown-menu').forEach(function(element) {
-        element.addEventListener('click', function(e) {
+    document.querySelectorAll('.dropdown-menu').forEach(function (element) {
+        element.addEventListener('click', function (e) {
             e.stopPropagation();
         });
     });
@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+
     // Actualizar la vista previa del carrito
     function actualizarCarrito() {
         const carritoContainer = document.getElementById('carrito-container');
@@ -64,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
             itemElement.classList.add('carrito-item');
             itemElement.innerHTML = `
                  <div class="row m-3">
-                <img class="col-6" src="${item.producto.imagen}" width="mx-auto" alt="${item.producto.nombre}">
+                <img class="col-6" src="${item.producto.imagen}" width="" alt="${item.producto.nombre}">
                 <div class="col-6 ">
                 <div class="carrito-item-nombre">${item.producto.nombre}</div>
                 <div class="carrito-item-precio">Precio: $${(item.producto.precio * item.cantidad).toFixed(2)}</div>
@@ -93,9 +94,15 @@ document.addEventListener("DOMContentLoaded", function() {
         const totalCantidad = carrito.reduce((total, item) => total + item.cantidad, 0);
         carritoIcono.textContent = totalCantidad;
 
+        // mostrar la cantidad total de producto
+        const cantidadTotalCarrito = document.getElementById('cantidad-total');
+        const totalCantidadCarrito = carrito.reduce((total, item) => total + item.cantidad, 0);
+        cantidadTotalCarrito.textContent = totalCantidadCarrito;
+        cantidadTotalCarrito.innerHTML = `<h5>Cantidad de Productos: ${totalCantidadCarrito} </h4>`;
+
         // Añadir event listeners para modificar cantidad y eliminar productos
         document.querySelectorAll('.menos-btn').forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function () {
                 const nombre = this.getAttribute('data-nombre');
                 const producto = carrito.find(item => item.producto.nombre === nombre).producto;
                 const cantidadInput = this.nextElementSibling;
@@ -109,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         document.querySelectorAll('.mas-btn').forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function () {
                 const nombre = this.getAttribute('data-nombre');
                 const producto = carrito.find(item => item.producto.nombre === nombre).producto;
                 const cantidadInput = this.previousElementSibling;
@@ -121,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         document.querySelectorAll('.eliminar-producto').forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function () {
                 const nombre = this.getAttribute('data-nombre');
                 const producto = carrito.find(item => item.producto.nombre === nombre).producto;
                 eliminarProducto(producto);
@@ -129,13 +136,16 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+
+
+
     // Evento click para el botón de pagar
-    document.getElementById('pagar-carrito').addEventListener('click', function() {
-        window.location.href = "../templates/carrito_compras.html";
+    document.getElementById('pagar-carrito').addEventListener('click', function () {
+        window.location.href = "/templates/carro_compras.html";
     });
 
-     // Evento click para el botón de vaciar carrito
-    document.getElementById('vaciar-carrito').addEventListener('click', function() {
+    // Evento click para el botón de vaciar carrito
+    document.getElementById('vaciar-carrito').addEventListener('click', function () {
         carrito = [];
         actualizarCarrito();
         guardarCarrito();
@@ -144,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Función de Listener de los botones de añadir al carrito
     function añadirEventListeners() {
         document.querySelectorAll('.añadir-btn').forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function () {
                 const card = button.closest('.card');
                 const nombre = card.querySelector('.card-title').textContent;
                 const producto = productos.find(p => p.nombre === nombre);
@@ -306,7 +316,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Añadir event listeners al botón "Añadir al Carrito"
     function añadirEventListeners() {
         document.querySelectorAll('.añadir-btn').forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function () {
                 const card = button.closest('.card');
                 const nombre = card.querySelector('.card-title').textContent;
                 const producto = productos.find(p => p.nombre === nombre);
@@ -316,7 +326,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    
+
 
     // Función para ordenar los productos por precio de menor a mayor
     function ordenarProductosPorPrecio() {
@@ -329,13 +339,13 @@ document.addEventListener("DOMContentLoaded", function() {
     if (ordenarBtn) {
         ordenarBtn.addEventListener('click', ordenarProductosPorPrecio);
     }
-    
+
 
 
     añadirEventListeners(); // Llamar la función para que se añadan los event listeners
     cargarProductos(); // Cargar los productos al cargar el DOM
     cargarCarrito(); // Cargar el carrito desde localStorage al iniciar
 
-    
-    
+
+
 });
